@@ -1,0 +1,33 @@
+spring:
+    application: {name: 'Activity'}
+    jackson: {
+       serialization: {write-dates-as-timestamps: false}, 
+       default-property-inclusion: non_null
+    }
+
+server:
+    servlet: {context-path: /}
+    port: 8081
+    jetty: {
+       accesslog: {
+          enabled: true, 
+          append: true, 
+          date-format: 'dd/MMM/yyyy:HH:mm:ss Z', 
+          extended-format: false, 
+          file-date-format: 'dd/MMM/yyyy:HH:mm:ss',
+          filename: '/home/krishnan/log/access',
+          locale: 'true',
+          log-cookies: 'false', 
+          log-latency: 'true', 
+          log-server: 'true', 
+          retention-period: 15, 
+          time-zone: 'GMT'
+        }
+     }  
+
+developer:
+   marketo: { 
+    baseUrl : 'https://developer.marketo/',
+    clientId : "abcd",
+    secretId : "xyz"
+   }
